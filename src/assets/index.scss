@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .font-paytone {
   font-family: Paytone One, sans-serif;
 }
@@ -14,3 +15,9 @@
   border-bottom-width: 3px
 }
 
+
+.bg {
+  background-image: url('@/assets/img/bg.png');
+  background-repeat: repeat;
+  background-size: 60px 60px;
+}

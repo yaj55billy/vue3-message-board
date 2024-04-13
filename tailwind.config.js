@@ -17,9 +17,23 @@ export default {
     },
     extend: {
       colors: {
-        Slate: {
+        slate: { // primary
           900: '#000400',
         },
+        gray: { // second
+          100: '#EFECE7',
+          400: '#9B9893'
+        },
+        blue: { 
+          200: '#E2EDFA',
+          500: '#03438D'
+        },
+        yellow: {
+          400: '#EEC32A'
+        },
+        red: {
+          400: '#F57375'
+        }
       }
     },
   },
