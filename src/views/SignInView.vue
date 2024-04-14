@@ -23,6 +23,7 @@ const signIn = () => {
   loaderStore.changeIsLoading(true);
   axios.post('http://127.0.0.1:3005/api/users/sign_in' ,user.value)
     .then((res) => {
+      console.log(res);
       const { token } = res.data.user;
       document.cookie = `metaToken=${token};`;
       router.push('/');

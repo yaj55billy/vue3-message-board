@@ -25,7 +25,7 @@ const formatDate = (originalDateStr) => {
   <div class="bg-white border-slate-900 border-2 shadow-slate-900 shadow-[0_3px_0px] rounded-lg p-6">
     <div class="flex items-center">
       <div class="w-[45px]">
-        <img class="w-full rounded-full" :src="props.post.user.photo" :alt="props.post.user.name">
+        <img class="w-full rounded-full border-slate-900 border-2" :src="props.post.user.photo" :alt="props.post.user.name">
       </div>
       <div class="pl-4">
         <h4 class="font-bold">{{ props.post.user.name }}</h4>
@@ -38,7 +38,7 @@ const formatDate = (originalDateStr) => {
     <div class="mt-4">
       <img
         class="w-full object-cover border-slate-900 border-2 rounded-lg"
-        :src="props.post.image" alt="">
+        :src="props.post.image" v-if="props.post.image">
     </div>
   </div>
 </template>
