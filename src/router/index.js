@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import BoardLayoutView from '../views/BoardLayoutView.vue';
 import HomeView from '../views/HomeView.vue';
 import CreatePostView from '../views/CreatePostView.vue';
+import UpdateProfileView from '../views/UpdateProfileView.vue';
 import SignUpView from '../views/SignUpView.vue';
 import SignInView from '../views/SignInView.vue';
 
@@ -22,7 +23,12 @@ const router = createRouter({
           path: '/createpost',
           name: 'CreatePost',
           component: CreatePostView
-        }
+        },
+        {
+          path: '/updateprofile',
+          name: 'UpdateProfile',
+          component: UpdateProfileView
+        },
       ]
     },
     {

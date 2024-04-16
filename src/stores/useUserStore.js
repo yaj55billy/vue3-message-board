@@ -35,6 +35,7 @@ export const useUserStore = defineStore('UserStore', () => {
       })
       .then((res) => {
         userData.value = res.data.data;
+        console.log(res.data.data);
         loaderStore.changeIsLoading(false);
       })
       .catch((error) => {
