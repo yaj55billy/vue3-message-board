@@ -39,7 +39,7 @@ const createPost = () => {
 };
 
 onMounted(() => {
-  userStore.getUserData();
+  // userStore.getUserData();
 });
 
 </script>

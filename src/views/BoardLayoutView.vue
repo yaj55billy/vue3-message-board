@@ -9,27 +9,25 @@ import { useUserStore } from '@/stores/useUserStore.js';
 const userStore = useUserStore();
 
 onMounted(() => {
-  userStore.checkAdmin();
+  userStore.checkToken();
 });
 
 </script>
 
 <template>
-  <template v-if="userStore.checkSuccess">
-    <Header />
-    <main class="main bg p-12">
-      <div class="container mx-auto">
-        <div class="flex ">
-          <div class="w-3/5 mr-7">
-            <RouterView />
-          </div>
-          <div class="flex-1">
-            <Sidebar />
-          </div>
+  <Header />
+  <main class="main bg p-12">
+    <div class="container mx-auto">
+      <div class="flex ">
+        <div class="w-3/5 mr-7">
+          <RouterView />
+        </div>
+        <div class="flex-1">
+          <Sidebar />
         </div>
       </div>
-    </main>
-  </template>
+    </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
