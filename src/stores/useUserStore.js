@@ -1,5 +1,4 @@
 import { ref } from "vue";
-import axios from "axios";
 import { useRouter } from "vue-router";
 import { defineStore } from "pinia";
 import { useLoaderStore } from "@/stores/useLoaderStore.js";
@@ -20,7 +19,6 @@ export const useUserStore = defineStore("UserStore", () => {
 			getUserData();
 		} else {
 			loginStatus.value = false;
-			console.log("尚未登入哩～");
 		}
 	};
 

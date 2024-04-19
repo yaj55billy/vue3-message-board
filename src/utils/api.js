@@ -1,7 +1,8 @@
 import axios from "axios";
 const { VITE_API_BASE } = import.meta.env;
 
-// 後台相關
+// http://127.0.0.1:3005/api
+// https://node-api-cqno.onrender.com/api
 export const apiBase = axios.create({
 	baseURL: `${VITE_API_BASE}`,
 });
@@ -17,15 +18,15 @@ export const apiSignUp = (userData) => apiBase.post("/users/sign_up", userData);
 // https://node-api-cqno.onrender.com/api/users/sign_in
 export const apiSignIn = (userData) => apiBase.post("/users/sign_in", userData);
 
-// 後台驗證
-// export const apiAdminCheck = () => apiAdminBase.post('/api/user/check', {});
-
 // 登出
-// export const apiSignOut = () => apiAdminBase.post('/logout');
 
-// 後台取得產品列表
-// export const apiGetAdminProducts = (page = 1) =>
-//   apiAdminBase.get(`/api/${VITE_API_PATH}/admin/products?page=${page}`);
+// 取得貼文
+// http://127.0.0.1:3005/api/posts?timeSort=asc&q=貼文內容
+// http://127.0.0.1:3005/api/posts?q=貼文內容
+export const apiGetPosts = (params) => apiBase.get("/posts", { params });
+
+// 新增貼文
+export const apiAddPost = (data) => apiBase.post("/post", data);
 
 // 後台上傳圖片
 // export const apiUploadAdminImage = (fileData) =>
