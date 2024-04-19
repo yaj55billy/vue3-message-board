@@ -12,6 +12,15 @@ const handleActiveComponent = (value) => {
 const userInfoTabActive = computed(() => {
 	if (activeComponent.value === "userInfo") {
 		return "text-white bg-slate-900";
+	} else {
+		return "text-slate-900 bg-white";
+	}
+});
+const passwordResetTabActive = computed(() => {
+	if (activeComponent.value === "passwordReset") {
+		return "text-white bg-slate-900";
+	} else {
+		return "text-slate-900 bg-white";
 	}
 });
 </script>
@@ -22,7 +31,7 @@ const userInfoTabActive = computed(() => {
 		<div class="ml-5">
 			<button
 				type="button"
-				class="py-2 px-6 border-slate-900 border-2 bg-white border-b-0 border-r-0 rounded-t-lg hover:bg-slate-900 hover:text-white"
+				class="py-2 px-6 border-slate-900 border-2 border-b-0 border-r-0 rounded-t-lg hover:bg-slate-900 hover:text-white"
 				:class="userInfoTabActive"
 				@click="handleActiveComponent('userInfo')"
 			>
@@ -30,10 +39,8 @@ const userInfoTabActive = computed(() => {
 			</button>
 			<button
 				type="button"
-				class="py-2 px-6 border-slate-900 border-2 bg-white border-b-0 rounded-t-lg hover:bg-slate-900 hover:text-white"
-				:class="{
-					'bg-slate-900 text-white': activeComponent === 'passwordReset',
-				}"
+				class="py-2 px-6 border-slate-900 border-2 border-b-0 rounded-t-lg hover:bg-slate-900 hover:text-white"
+				:class="passwordResetTabActive"
 				@click="handleActiveComponent('passwordReset')"
 			>
 				重設密碼
