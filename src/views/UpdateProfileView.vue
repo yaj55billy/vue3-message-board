@@ -3,6 +3,8 @@ import { ref, computed, onMounted } from "vue";
 import SectionTitle from "@/components/SectionTitle.vue";
 import UserInfo from "@/components/UserInfo.vue";
 import PasswordReset from "@/components/PasswordReset.vue";
+import { useUserStore } from "@/stores/useUserStore";
+const userStore = useUserStore();
 
 const activeComponent = ref("userInfo");
 const handleActiveComponent = (value) => {
@@ -22,6 +24,9 @@ const passwordResetTabActive = computed(() => {
 	} else {
 		return "text-slate-900 bg-white";
 	}
+});
+onMounted(() => {
+	userStore.getUserData();
 });
 </script>
 
@@ -53,7 +58,7 @@ const passwordResetTabActive = computed(() => {
 				<Transition name="fade" mode="out-in">
 					<div :key="activeComponent">
 						<template v-if="activeComponent === 'userInfo'">
-							<UserInfo key="userInfo" />
+							<UserInfo key="userInfo" :userData="userStore.userData" />
 						</template>
 						<template v-if="activeComponent === 'passwordReset'">
 							<PasswordReset key="passwordReset" />
