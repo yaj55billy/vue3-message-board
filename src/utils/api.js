@@ -8,11 +8,9 @@ export const apiBase = axios.create({
 });
 
 // 註冊
-// https://node-api-cqno.onrender.com/api/users/sign_up
 export const apiSignUp = (userData) => apiBase.post("/users/sign_up", userData);
 
 // 登入
-// https://node-api-cqno.onrender.com/api/users/sign_in
 export const apiSignIn = (userData) => apiBase.post("/users/sign_in", userData);
 
 // 登出
@@ -24,9 +22,11 @@ export const apiGetUsersProfile = () => apiBase.get("/users/profile");
 export const apiProfileUpdate = (data) =>
 	apiBase.patch("/users/updateProfile", data);
 
-// 取得貼文
-// http://127.0.0.1:3005/api/posts?timeSort=asc&q=貼文內容
-// http://127.0.0.1:3005/api/posts?q=貼文內容
+// 更改密碼
+export const apiUpdatePassword = (data) =>
+	apiBase.post("/users/updatePassword", data);
+
+// 取得貼文 /api/posts?timeSort=asc&q=貼文內容
 export const apiGetPosts = (params) => apiBase.get("/posts", { params });
 
 // 新增貼文

@@ -33,17 +33,4 @@ export const SwalHandle = {
 			title,
 		});
 	},
-	// confirm: function (title, text, callback) {
-	//   Swal.fire({
-	//     title: title,
-	//     text: text,
-	//     showCancelButton: true,
-	//     confirmButtonText: '確定',
-	//     cancelButtonText: '取消',
-	//   }).then((result) => {
-	//     if (result.isConfirmed && callback) {
-	//       callback();
-	//     }
-	//   });
-	// },
 };
